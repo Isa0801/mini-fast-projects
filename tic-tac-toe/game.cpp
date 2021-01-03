@@ -278,6 +278,16 @@ void TicTaceToe::render(sf::RenderWindow& window){
     //     obj->render(window);
     // }
 
+    sf::Color cirColor, xColor;
+
+    if (yourX){
+        xColor = sf::Color::Green;
+        cirColor = sf::Color::Red;
+    } else {
+
+        xColor = sf::Color::Red;
+        cirColor = sf::Color::Green;
+    }
 
 
     for (size_t x = 0; x <= 2; x++){
@@ -312,9 +322,9 @@ void TicTaceToe::render(sf::RenderWindow& window){
         size.y = abs(size.y);
 
         if (gameMap[x][0] == 1)
-            xObj(size, cords).render(window);
+            xObj(size, cords, xColor).render(window);
         else if (gameMap[x][0] == 2)
-            cirObj(size, cords).render(window);
+            cirObj(size, cords, cirColor).render(window);
 
 
         // mid pos
@@ -324,9 +334,9 @@ void TicTaceToe::render(sf::RenderWindow& window){
 
 
         if (gameMap[x][1] == 1)
-            xObj(size, cords).render(window);
+            xObj(size, cords, xColor).render(window);
         else if (gameMap[x][1] == 2)
-            cirObj(size, cords).render(window);
+            cirObj(size, cords, cirColor).render(window);
         
         // bottom pos
 
@@ -335,9 +345,9 @@ void TicTaceToe::render(sf::RenderWindow& window){
         size.y = abs(size.y);
 
         if (gameMap[x][2] == 1)
-            xObj(size, cords).render(window);
+            xObj(size, cords, xColor).render(window);
         else if (gameMap[x][2] == 2)
-            cirObj(size, cords).render(window);
+            cirObj(size, cords, cirColor).render(window);
     }
     
     
