@@ -367,10 +367,16 @@ void TicTaceToe::update(sf::RenderWindow& window){
                 gameMap[i][2] = -1;
 
                 Turns = 1;
-                yourX = !yourX;
+                
                 sf::sleep(sf::milliseconds(1000));
             }
             
+            yourX = !yourX;
+
+            if (yourX)
+                yourTurn = true;
+            else
+                yourTurn = false;
             
         }
     
